@@ -1,0 +1,138 @@
+body {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% { background: linear-gradient(to right, #2c3e50, #4ca1af); }
+    50% { background: linear-gradient(to right, #4ca1af, #2c3e50); }
+    100% { background: linear-gradient(to right, #2c3e50, #4ca1af); }
+}
+
+.weather-card {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-card h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.form-control {
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* Flexbox container to align input and button vertically */
+.input-group-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Add gap between input and button */
+}
+
+/* Stylish Weather Button */
+.btn-custom {
+    background: linear-gradient(135deg, #ffffff, #ff5733);
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 100%; /* Make the button fill the width of the parent container */
+    max-width: 300px; /* Limit the width of the button */
+    display: block; /* Ensure the button takes up full width inside the container */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+}
+
+.btn-custom:hover {
+    background: linear-gradient(135deg, #ff5733, #ff7f50);
+    cursor: pointer;
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.btn-custom:focus {
+    outline: none;
+}
+
+/* Weather Info Styling */
+.weather-info {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    margin-top: 15px;
+}
+
+.temp {
+    font-size: 4rem;
+    color: #ffd700;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.4rem;
+    color: #f0f0f0;
+    margin-top: 10px;
+}
+
+.weather-icon {
+    width: 80px;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .weather-card {
+        padding: 25px;
+    }
+
+    .weather-card h2 {
+        font-size: 2rem; /* Reduced font size for mobile */
+    }
+
+    .temp {
+        font-size: 3rem; /* Adjusted temperature font size for mobile */
+    }
+
+    .btn-custom {
+        font-size: 1rem; /* Smaller button text for mobile */
+        padding: 12px 20px; /* Adjusted padding for button */
+    }
+}
